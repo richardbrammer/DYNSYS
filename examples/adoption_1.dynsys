@@ -12,16 +12,16 @@ INFLUENCE positive FROM "Probability that contact has not yet adopted" TO "Imita
 INFLUENCE positive FROM "Imitators" TO "New adopters"
 STEP 100 # how many steps/loops does the model run 
 
-# Vorteile:
-# Relativ natürliche Sprache
-# Wenige reservierte Wörte STOCK, FLOW, PARAMETER, INFLUENCE, FROM, TO, positive, negative
-# Durch Anführungszeichen können IDs der Nodes natürliche Sprachausdrücke (Worte, Sätze) sein
-# Eindeutig (?)
+# Advantages:
+# Relatively natural language
+# Few reserved words STOCK, FLOW, PARAMETER, INFLUENCE, FROM, TO, positive, negative
+# Quotation marks can be used to identify the nodes' natural IDs (words, sentences)
+# Clearly (?)
 
-# Nachteile:
-# Viel zu schreiben, und bei komplexen Modellen evtl. unübersichtlich
-# Jede Kante ist eigens definiert. Vielleicht kann man die Kanten als Teile der Parameter ausdrücken (entweder ingoing oder outgoing)
-# Bei der Interpretation/Kompilierung, wird es schwierig die vielen einzeln definierten Kanten pro Parameter zu finden
-# Es assen sich nur simple, qualitative Modelle mit der Notation schreiben
-# Delays, sind noch nicht enthalten. Wie würde man das interpretieren
+# Disadvantage:
+# A lot to write, and possibly confusing for complex models
+# Each edge is specifically defined. Maybe you can express the edges as part of the parameters (either ingoing or outgoing)
+# When interpreting / compiling, it becomes difficult to find the many individually defined edges per parameter
+# Only simple, qualitative models can be written with the notation
+# Delays are no
 
