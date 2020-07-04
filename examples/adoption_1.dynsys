@@ -1,0 +1,27 @@
+STOCK "Adopters" 0
+STOCK "Potential adopters" 100
+FLOW "New adopters" FROM "Potential adopters" TO "Adopters"
+PARAMETER "Innovators"
+PARAMETER "Imitators"
+PARAMETER "Probability that contact has not yet adopted"
+INFLUENCE positive FROM "Innovators" TO "New adopters"
+INFLUENCE positive FROM "Potential adopters" TO "Innovators"
+INFLUENCE negative FROM "Potential adopters" TO "Probability that contact has not yet adopted"
+INFLUENCE positive FROM "Adopters" TO "Probability that contact has not yet adopted"
+INFLUENCE positive FROM "Probability that contact has not yet adopted" TO "Imitators"
+INFLUENCE positive FROM "Imitators" TO "New adopters"
+STEP 100 # how many steps/loops does the model run 
+
+# Vorteile:
+# Relativ natürliche Sprache
+# Wenige reservierte Wörte STOCK, FLOW, PARAMETER, INFLUENCE, FROM, TO, positive, negative
+# Durch Anführungszeichen können IDs der Nodes natürliche Sprachausdrücke (Worte, Sätze) sein
+# Eindeutig (?)
+
+# Nachteile:
+# Viel zu schreiben, und bei komplexen Modellen evtl. unübersichtlich
+# Jede Kante ist eigens definiert. Vielleicht kann man die Kanten als Teile der Parameter ausdrücken (entweder ingoing oder outgoing)
+# Bei der Interpretation/Kompilierung, wird es schwierig die vielen einzeln definierten Kanten pro Parameter zu finden
+# Es assen sich nur simple, qualitative Modelle mit der Notation schreiben
+# Delays, sind noch nicht enthalten. Wie würde man das interpretieren
+

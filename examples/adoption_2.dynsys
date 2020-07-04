@@ -1,0 +1,23 @@
+# Variant 2 for defining the edges as part of the nodes
+
+STOCK "Adopters" 0
+STOCK "Potential adopters" 100
+FLOW "New adopters" FROM "Potential adopters" TO "Adopters"
+    positive FROM "Innovators"
+    positive FROM "Imitators"
+PARAMETER "Innovators"
+    positive FROM "Potential adopters"
+PARAMETER "Imitators"
+    positive FROM "Probability that contact has not yet adopted"
+PARAMETER "Probability that contact has not yet adopted"
+    negative FROM "Potential adopters"
+    positive FROM "Adopters"
+STEP 100
+
+# Advantages:
+# During the interpretation / compilation, it is likely to be easier to determine the values of the parameters based on the influencers mentioned
+
+# Outlook:
+# The reserved words positive / negative can be extended by "slightly" "strongly" "delay"
+# The reserved words positive / negative can be replaced by Excel-like short formulas (similar to quantitative models with VenSim / Consideo)
+ 
