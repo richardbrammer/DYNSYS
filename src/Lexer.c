@@ -6,6 +6,6 @@ void getTokens(char *tokens[5], char *code) {
 
     tokens[i] = strtok(code, " ");
     while(tokens[i] != NULL) {
-        tokens[++i] = strtok(NULL, " ");
+        tokens[++i] = strtok(NULL, " ,.\""); // 20200708T115638Z mer edit
     }
 }
