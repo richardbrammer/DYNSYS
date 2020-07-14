@@ -17,8 +17,16 @@ int main() {
     file = fopen(filename, "r");
     if (file) {
         printf("You loaded %s:\n\n", filename);
+
+        /* process each line */
         while(fgets(line, 2048, file)) {
-            /* printf("%s", line); */
+            
+            /* Ignore comments */
+            if (strncmp(line, "#", 1) == 0) {
+                continue;
+            }
+
+            /* get the tokens of this line and print them all */
             getTokens(tokens, line);
             i = 0;
             while (tokens[i]) {
